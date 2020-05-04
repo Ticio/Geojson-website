@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IP2 - home</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script>
+
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <a href="index.html" class="scrollto"><img src="img/icons/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="airport.html">Airport</a></li>
+          <li><a href="earthquake.html">Earthquake</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro" class="clearfix mt-5 w-100 py-0 px-0" style="height: 95vh">
+    <div class="container-fluid h-100 w-100 py-0 px-0" id="background-image">
+
+      <div class="row w-100 h-50 my-0 mx-0">
+          <div class="mt-5 text-center w-100" style="display: flex; flex-direction: row;">
+              <header class="section-header mt-5 w-100">
+                  <h3 style="color: #fff;">IP2 Project</h3>
+                  <p style="color: #fff;">The iP2 Project is a 3rd year assessment that encompasses the development of a web-application that maps earthquakes and weather in different locations.</p>
+              </header>
+          </div>
+      </div>
+
+      <style>
+        #sec-div::after {
+            position: absolute;
+            content: "";
+            top: -23px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: skewY(-2deg);
+            -moz-transform: skewY(-2deg);
+            -ms-transform: skewY(-2deg);
+            -o-transform: skewY(-2deg);
+            transform: skewY(-2deg);
+            background-color: rgba(185, 187, 0);
+            z-index: 2;
+        }
+      </style>
+
+      <div class="row w-100 h-50 my-0 mx-0 px-5 text-center" id="sec-div" style="background-color: rgba(185, 187, 0); position: relative">
+         <div class="mt-1 text-center w-100" style="z-index: 100">
+              <header class="section-header d-block w-100">
+                  <h3 style="color: #fff">Site functions</h3>
+              </header>
+         </div>
+
+         <!-- Boxes de Acoes -->
+         <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000">
+            <a href="" data-toggle="modal" data-target="#myModal">
+              <figure class="figure text-center">
+                <img src="img/icons/doc.png" class="figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                <figcaption class="figure-caption" style="color: #fff"><h6>Spec Doc</h6></figcaption>
+              </figure>
+            </a>
+
+            <div class="modal myModal" id="myModal" style="z-index: 2000">
+               <div class="modal-dialog modal-lg" style="z-index: 2000; height: 450px">
+                 <div class="modal-content" style="z-index: 2000">
+                   <!-- Modal Header -->
+                   <div class="modal-header" style="z-index: 2000">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   </div>
+                  
+                   <!-- Modal body -->
+                   <div class="modal-body" id="cv-document" style="z-index: 2000">
+                   </div>
+                 </div>
+               </div>
+            </div>
+
+            <script>PDFObject.embed("docs/Spec.pdf", "#cv-document");</script>
+         </div>
+
+         <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000">
+            <a href="earthquake.html" class="toHide">
+              <figure class="figure text-center">
+                <img src="img/icons/earthquake.png" class="figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                <figcaption class="figure-caption" style="color: #fff"><h6>Earthquake Mapping</h6></figcaption>
+              </figure>
+            </a>
+         </div>
+
+         <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000">
+            <a href="weather.html" class="toHide">
+              <figure class="figure text-center">
+                <img src="img/icons/weather.png" class="figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                <figcaption class="figure-caption" style="color: #fff"><h6>Weather Mapping</h6></figcaption>
+              </figure>
+            </a>
+         </div>
+
+         <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000">
+            <a href="airport.html">
+              <figure class="figure text-center">
+                <img src="img/icons/airport.png" class="figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                <figcaption class="figure-caption" style="color: #fff"><h6>Airport Mapping</h6></figcaption>
+              </figure>
+            </a>
+         </div>
+      </div>
+
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      Team Section
+    ============================-->
+    <section id="team">
+      <div class="container">
+        <div class="section-header">
+            <h3>Team</h3>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="img/team-1.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Andrew John</h4>
+                  <span><b>Project Co-Manager</b></span>
+                  <span>Enjoys creating prodcuts which users will love and validate all assumptions to ensure a product’s effectiveness. Interested in UI & UX Designer</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="member">
+              <img src="img/team-2.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Bofelo Kevin</h4>
+                  <span><b>Product Manager</b></span>
+                  <span>Creative user Experience and Interface Designer. Interested in HCI, Software Engineering and UX Design</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="img/team-3.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Tício Victoriano</h4>
+                  <span><b>Project Developer</b></span>
+                  <span>Tech enthusiast interested in ICT consulting, machine learning, big data, and software engineering. Passionated about solving problems and driving positive change</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="member">
+              <img src="img/team-4.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Koné Fanhatcha</h4>
+                  <span><b>Project Developer</b></span>
+                  <span>Versatile software developer and passionate about Tech Entrepreneurship and Cloud Computing.</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+        <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact">
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h3>GeoJSON Overview</h3>
+        </div>
+
+        <div class="row wow fadeInUp">
+
+          <div class="col-lg-6">
+            <div class="map mb-4 mb-lg-0">
+
+              <h5><b>What is Geo-JSON?</b></h5>
+
+              <p class="font-weight-normal text-justify">
+                GeoJSON is an open standard format designed for representing simple geographical features, along with their non-spatial attributes. It is based on JSON, the JavaScript Object Notation. The features include points, line strings, polygons, and multi-part collections of these types.
+
+                Follow the links below to enhance your knowledge
+              </p>
+
+              <p class="text-info">Follow the links below to enhance your knowledge</p>
+
+              <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000" style="background: black">
+                    <figure class="figure text-center">
+                        <img src="img/icons/note.png" class="toHide figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                        <figcaption class="figure-caption"><a href="" class="toHide" data-toggle="modal" data-target="#modal1">What is it?</a></figcaption>
+                      </figure>
+
+                      <div class="modal myModal" id="modal1" style="z-index: 2000">
+                          <div class="modal-dialog modal-lg" style="z-index: 2000; height: 450px">
+                            <div class="modal-content" style="z-index: 2000">
+                              <!-- Modal Header -->
+                              <div class="modal-header" style="z-index: 2000">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                               <!-- Modal body -->
+                              <div class="modal-body" id="cv-document1" style="z-index: 2000">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                        <script>PDFObject.embed("docs/WhatIsIt.pdf", "#cv-document1");</script>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000" style="background: black">
+                    <figure class="figure text-center">
+                        <img src="img/icons/note.png" class="toHide figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                        <figcaption class="figure-caption"><a href="" class="toHide" data-toggle="modal" data-target="#modal2">How it works?</a></figcaption>
+                      </figure>
+
+                      <div class="modal myModal" id="modal2" style="z-index: 2000">
+                          <div class="modal-dialog modal-lg" style="z-index: 2000; height: 450px">
+                            <div class="modal-content" style="z-index: 2000">
+                              <!-- Modal Header -->
+                              <div class="modal-header" style="z-index: 2000">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                               <!-- Modal body -->
+                              <div class="modal-body" id="cv-document2" style="z-index: 2000">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <script>PDFObject.embed("docs/HowItWorks.pdf", "#cv-document2");</script>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000" style="background: black">
+                    <figure class="figure text-center">
+                        <img src="img/icons/note.png" class="toHide figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                        <figcaption class="figure-caption"><a href="" class="toHide" data-toggle="modal" data-target="#modal3">Where It Works?</a></figcaption>
+                      </figure>
+
+                      <div class="modal myModal" id="modal3" style="z-index: 2000">
+                          <div class="modal-dialog modal-lg" style="z-index: 2000; height: 450px">
+                            <div class="modal-content" style="z-index: 2000">
+                              <!-- Modal Header -->
+                              <div class="modal-header" style="z-index: 2000">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                               <!-- Modal body -->
+                              <div class="modal-body" id="cv-document3" style="z-index: 2000">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <script>PDFObject.embed("docs/WhereItWorks.pdf", "#cv-document3");</script>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-6 col-lg-3" style="z-index: 1000" style="background: black">
+                    <figure class="figure text-center">
+                        <img src="img/icons/note.png" class="toHide figure-img img-fluid rounded" alt="" style="max-width: 150px">
+                        <figcaption class="figure-caption"><a href="" class="toHide" data-toggle="modal" data-target="#modal4">Introduction</a></figcaption>
+                      </figure>
+
+                      <div class="modal myModal" id="modal4" style="z-index: 2000">
+                          <div class="modal-dialog modal-lg" style="z-index: 2000; height: 450px">
+                            <div class="modal-content" style="z-index: 2000">
+                              <!-- Modal Header -->
+                              <div class="modal-header" style="z-index: 2000">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              </div>
+                              
+                               <!-- Modal body -->
+                              <div class="modal-body" id="cv-document4" style="z-index: 2000">
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                        <script>PDFObject.embed("docs/introduction.pdf", "#cv-document4");</script>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6" style="position: relative">
+            <div class="row">
+              <div id="div-video" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: auto; box-sizing: border-box; border: 2px solid rgba(0,0,0, 0.2); border-radius: 5px; height: 276px; width: 440px;">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/8RPfrhzRw2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+
+  <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+            <b>Integrated Project II</b>
+        </div>
+
+        <div class="mt-1 credits">
+            African Leadership University
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script> 
+        $(".myModal" ).on('show.bs.modal', function(){
+            $(".toHide").addClass('d-none');
+        });
+
+        $(".myModal" ).on('hide.bs.modal', function(){
+            $(".toHide").removeClass('d-none');
+        });
+    </script>
+
+</body>
+</html>

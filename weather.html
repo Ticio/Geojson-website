@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>IP2 Project</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <style>
+
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 505px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+        border: 1px solid rgba(0,0,0, 0.2);
+        border-radius: 2px;
+     }
+
+     #main{
+        height: 90vh;
+     }
+
+     .checkbox label input[type="checkbox"] + .cr > .cr-icon, .radio label input[type="radio"] + .cr > .cr-icon {
+          transform: scale(3) rotateZ(-20deg);
+          opacity: 0;
+          transition: all .3s ease-in;
+      }
+
+      .card-header{
+          background: rgba(0,0,0,0.7);
+          color: #fff;
+          border-radius: 0px !important;
+      }
+
+      .checkbox .cr .cr-icon, .radio .cr .cr-icon {
+          position: absolute;
+          font-size: .8em;
+          line-height: 0;
+          top: 50%;
+          left: 20%;
+      }
+
+     .chosen-container{
+          float: right !important;
+          width: 98% !important;
+          margin-right: 5px !important;
+      }
+
+      .chosen-container-multi .chosen-choices{
+          border-radius: 3px !important;
+          margin-bottom: 15px !important;
+      }
+
+      #contact label{
+          font-size: 14px;
+          padding-top: 3px;
+      }
+
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+        <header id="header" class="fixed-top">
+          <div class="container">
+
+            <div class="logo float-left">
+              <a href="index.html" class="scrollto"><img src="img/icons/logo.png" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav class="main-nav float-right d-none d-lg-block">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="airport.html">Airport</a></li>
+                <li><a href="earthquake.html">Earthquake</a></li>
+              </ul>
+            </nav><!-- .main-nav -->
+
+          </div>
+        </header><!-- #header -->
+
+    <main id="main" style="margin-top: 57px !important">
+            <section id="contact" style=" padding-top: 45px">
+              <div class="container-fluid">
+
+                <div class="row wow fadeInUp">
+                  <div class="col-lg-9">
+                    <div class="map" id="map">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-2 col-lg-offset-1">
+                    <div class="card" style="width: 18rem;">
+                      <div class="card-header text-center" style="font-size: 15px">
+                        <b>Filters For Weather Mapping</b>
+                      </div>
+
+                      <div class="card-body">
+                        <label class="mb-1 d-inline-block"><b>Location name</b></label>
+                        <div class="search-item search head-item">
+                            <select data-placeholder="Choose countries..." id="search2" class="input-element chosen-select" name="search">
+                              <option value=""></option>
+                              <option value=""></option>
+                            </select>
+                        </div>
+
+                        <div class="clearfix my-3"></div>
+                        <h5 class="text-center clearfix"><b>or</b></h5>
+
+                        <form class="form-horizontal text-center">
+                            <div style="display: flex; flex-direction: row">
+                              <div class="form-group" style="padding-right: .33rem !important">
+                                <label for="usr"><b>Latitude</b></label>
+                                <input type="text" id="latitude" style="font-size: 10px" name="latitude" class="numberOnly form-control form-control-sm" id="usr">
+                              </div>
+                              <div class="form-group" style="padding-right: .33rem !important">
+                                <label for="pwd"><b>Longitude</b></label>
+                                <input type="text" id="longitude" style="font-size: 10px" name="longitude" class="numberOnly form-control form-control-sm" id="pwd">
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <button type="button" id="btn-search" class="w-100 btn btn-primary"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section><!-- #contact -->
+    </main>
+
+    <!--==========================
+      Footer
+    ============================-->
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">
+            <b>Integrated Project II</b>
+        </div>
+
+        <div class="mt-1 credits">
+            African Leadership University
+        </div>
+      </div>
+    </footer><!-- #footer -->
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+
+    <!-- JavaScript Libraries -->
+
+
+
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+
+    <script>
+
+    </script>
+
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmvWSeWu-g_uQ7TpQBZFspA0KaTnMmdCg&callback=initMap"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+      // //For enabling
+      $(".chosen-select").chosen();
+
+      $(".numberOnly").on("keypress keyup blur",function (event) {
+          $(this).val($(this).val().replace(/[^0-9\.]/g,''));
+
+          if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) {
+              event.preventDefault();
+          }
+      });
+
+      $("#btn-search").click(function(event) {
+          event.preventDefault();
+          searchByLatitudeLongitude();
+      });
+
+      $.get('https://restcountries.eu/rest/v2/all', function (data){
+        console.log(data);
+        var countries = [];
+
+        $.each(data, function(index, val) {
+          if(val.name != "Åland Islands" && val.name != "Anguilla"){
+            countries.push(val.name);
+
+            if($("#search2").length){
+                $("#search2").append('<option value="'+val.name+'">'+val.name+'</option>').trigger("chosen:updated");
+            }
+          }
+        });
+      });
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmvWSeWu-g_uQ7TpQBZFspA0KaTnMmdCg&callback=initMap"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/main.js"></script>
+<body>
+
+</html>
